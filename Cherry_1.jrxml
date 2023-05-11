@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry_1" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM WYPOZYCZENIA]]>
+	</queryString>
+	<field name="ID_WYPOZYCZENIA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ID_WYPOZYCZENIA"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_WYPOZYCZENIA"/>
+	</field>
+	<field name="DATA_WYPOZYCZENIA" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DATA_WYPOZYCZENIA"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATA_WYPOZYCZENIA"/>
+	</field>
+	<field name="MIASTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MIASTO"/>
+		<property name="com.jaspersoft.studio.field.label" value="MIASTO"/>
+	</field>
+	<field name="ID_KLIENTA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ID_KLIENTA"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_KLIENTA"/>
+	</field>
+	<field name="ID_MODELU" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ID_MODELU"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_MODELU"/>
+	</field>
+	<group name="MIASTO">
+		<groupExpression><![CDATA[$F{MIASTO}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="10" y="0" width="100" height="30" uuid="beb712a0-9d64-4339-bda1-d62935b2c2e4"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MIASTO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="1"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="97705585-a0b5-4ec7-86f3-ae10c220e6af"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="a2a2cac8-5a7d-4487-8c54-dab235ce4e21"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Wypożyczenia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[według miast]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="5c3301e7-a737-4c59-8a2f-a6c79fd1adb8"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="30" uuid="84284d95-da54-4b9c-bfe9-8b127c2670cc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f078ff09-20b3-4fa3-82c8-3129d08e561e"/>
+				</reportElement>
+				<text><![CDATA[ID_WYPOZYCZENIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="10" width="100" height="30" uuid="121ab0de-889c-4935-8140-8241fc1f7674">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62298ed3-e063-44b5-9f4a-73f675976b31"/>
+				</reportElement>
+				<text><![CDATA[DATA_WYPOZYCZENIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="10" width="100" height="30" uuid="f678fb59-ce3f-4f0b-8581-b20eb16892ea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c699a745-7b6a-4a4e-a90e-acb7751401b7"/>
+				</reportElement>
+				<text><![CDATA[ID_KLIENTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="10" width="100" height="30" uuid="817fb9da-1e4f-4795-a205-d2e31b7b2570">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8e87db8-d212-454d-ac9a-6226818c66c7"/>
+				</reportElement>
+				<text><![CDATA[ID_MODELU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="9" width="100" height="30" uuid="25a7efcc-64a3-492a-9561-d591520a03bf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f078ff09-20b3-4fa3-82c8-3129d08e561e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ID_WYPOZYCZENIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="10" width="100" height="30" uuid="55abb102-beae-4c02-9f18-d91de1fd7bb8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62298ed3-e063-44b5-9f4a-73f675976b31"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{DATA_WYPOZYCZENIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="100" height="30" uuid="262267c2-25cd-409b-a4cc-bddf507eeef1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c699a745-7b6a-4a4e-a90e-acb7751401b7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ID_KLIENTA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="9" width="100" height="30" uuid="d6d117ea-dc10-4663-ab13-bd43ba2adbbb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8e87db8-d212-454d-ac9a-6226818c66c7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ID_MODELU}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="cf4160a4-879a-45d5-b46c-b80054152366"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="31" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

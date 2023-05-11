@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Coffee" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="MAX_WAGA" class="java.lang.String"/>
+	<parameter name="MAX_PREDKOSC" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM HULAJNOGI 
+WHERE
+MAX_PREDKOSC<=$P{MAX_PREDKOSC}
+AND
+WAGA<=$P{MAX_WAGA}
+]]>
+	</queryString>
+	<field name="ID_MODELU" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ID_MODELU"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_MODELU"/>
+	</field>
+	<field name="MAX_PREDKOSC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="MAX_PREDKOSC"/>
+		<property name="com.jaspersoft.studio.field.label" value="MAX_PREDKOSC"/>
+	</field>
+	<field name="ZASIEG" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ZASIEG"/>
+		<property name="com.jaspersoft.studio.field.label" value="ZASIEG"/>
+	</field>
+	<field name="WAGA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="WAGA"/>
+		<property name="com.jaspersoft.studio.field.label" value="WAGA"/>
+	</field>
+	<field name="ID_PRODUCENTA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ID_PRODUCENTA"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_PRODUCENTA"/>
+	</field>
+	<field name="ABONAMENT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ABONAMENT"/>
+		<property name="com.jaspersoft.studio.field.label" value="ABONAMENT"/>
+	</field>
+	<field name="NAZWA_MODELU" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NAZWA_MODELU"/>
+		<property name="com.jaspersoft.studio.field.label" value="NAZWA_MODELU"/>
+	</field>
+	<field name="ILOSC_DOS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ILOSC_DOS"/>
+		<property name="com.jaspersoft.studio.field.label" value="ILOSC_DOS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="164" height="126" uuid="ddc15723-2728-421f-b95e-2df9faf64ce1"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="170" y="0" width="320" height="62" uuid="1a652692-054a-40f3-ade5-68d8da36626d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[HULAJNOGI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="180" y="62" width="234" height="22" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[MAX WAGA i PRĘDKOŚĆ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="-115" width="267" height="209" uuid="5d64e5b3-07bb-48ab-89dc-15c0c46bb19a"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1a61a836-d137-48b1-ad67-6ff64600bf93"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="10" y="1" width="100" height="16" uuid="c6fba0df-3924-48ec-9ce3-f716232a4511">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dfa7973-50b1-4495-85cd-06f90a8a7234"/>
+				</reportElement>
+				<text><![CDATA[ID_MODELU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="16" uuid="aa5693d9-c23c-4d93-a9aa-d688eca49bc0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f724b0eb-f1c8-4a64-aca9-c4dd0c06d631"/>
+				</reportElement>
+				<text><![CDATA[WAGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="1" width="100" height="16" uuid="3f38db53-9c3a-4805-a23f-d723bfd4c6ed">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0c41d22-0534-4b7a-9959-de655820090c"/>
+				</reportElement>
+				<text><![CDATA[NAZWA_MODELU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="1" width="100" height="16" uuid="fd968ba1-de8e-4428-bc72-28c4b529094d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3d79591-62ec-4795-85f2-1e35fe298748"/>
+				</reportElement>
+				<text><![CDATA[MAX_PREDKOSC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766"/>
+				<textField>
+					<reportElement x="10" y="5" width="100" height="30" uuid="aa4610c5-ce6a-43d9-afd0-cc07e7dfc092">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dfa7973-50b1-4495-85cd-06f90a8a7234"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{ID_MODELU}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="140" y="5" width="100" height="30" uuid="49cfcae1-c73f-4c07-afe4-03dcb5bfcb11">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3d79591-62ec-4795-85f2-1e35fe298748"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{MAX_PREDKOSC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="300" y="3" width="100" height="30" uuid="feac5561-4a87-4a08-bd61-0b0aeee8576f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f724b0eb-f1c8-4a64-aca9-c4dd0c06d631"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{WAGA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="420" y="5" width="100" height="30" uuid="e1f1ad7a-d88d-41b4-88bf-a0766891e3bc">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0c41d22-0534-4b7a-9959-de655820090c"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{NAZWA_MODELU}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fa45a887-615a-4d84-a2d7-8a2219671b3c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="183682bc-d976-4756-83e0-6625a3f98ed1"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="0193f9b3-1559-491a-8580-b6988863b6a1"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="d00b105e-494b-418b-8ac9-8b1b4824f4f0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="0616f3fe-0354-456f-8911-ec30ec51a5ae"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
